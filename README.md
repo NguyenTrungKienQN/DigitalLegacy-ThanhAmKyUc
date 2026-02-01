@@ -1,6 +1,9 @@
 ### Digital Legacy - Thanh âm ký ức
 Dự án Vòng thi 1 - cuộc thi FPT AI Young Guru
+
 Đội thi Therize
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
