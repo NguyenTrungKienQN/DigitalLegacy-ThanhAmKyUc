@@ -2,11 +2,147 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Offline</title>
+  <style>
+    :root{
+      --bg1:#f4ead8;
+      --bg2:#e8d4ad;
+      --ink:#2b241c;
+      --muted: rgba(43,36,28,.68);
+      --card: rgba(255,255,255,.62);
+      --stroke: rgba(0,0,0,.10);
+      --shadow: 0 22px 70px rgba(0,0,0,.20);
+      --warn:#f4b400;
+    }
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(900px 520px at 50% 0%, rgba(255,255,255,.65), transparent 62%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      display:grid;
+      place-items:center;
+      padding: 24px;
+    }
+
+    .wrap{
+      width:min(420px, 100%);
+      text-align:center;
+    }
+
+    .card{
+      border-radius: 28px;
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      padding: 22px 18px 18px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .icons{
+      position:relative;
+      width:92px;
+      height:92px;
+      margin: 0 auto 14px;
+      display:grid;
+      place-items:center;
+    }
+
+    .app{
+      width:72px;
+      height:72px;
+      border-radius: 22px;
+      background: rgba(0,0,0,.08);
+      border: 1px solid rgba(0,0,0,.10);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.65),
+        0 12px 28px rgba(0,0,0,.18);
+      display:grid;
+      place-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+    /* một chút “paper grain” nhẹ */
+    .app:before{
+      content:"";
+      position:absolute; inset:-40px;
+      background:
+        radial-gradient(circle at 30% 10%, rgba(255,255,255,.35), transparent 45%),
+        radial-gradient(circle at 80% 60%, rgba(0,0,0,.08), transparent 55%);
+      transform: rotate(-10deg);
+      opacity:.9;
+    }
+    .app > span{
+      position:relative;
+      font-size: 30px;
+      line-height:1;
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,.18));
+    }
+
+    .warn{
+      position:absolute;
+      right:-2px;
+      bottom:-2px;
+      width:34px;
+      height:34px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(0,0,0,.10);
+      display:grid;
+      place-items:center;
+      box-shadow: 0 10px 22px rgba(0,0,0,.18);
+    }
+    .warn svg{ display:block; }
+
+    h2{
+      margin: 8px 0 6px;
+      font-size: 20px;
+      letter-spacing: -.2px;
+    }
+    p{
+      margin:0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .hint{
+      margin-top: 14px;
+      font-size: 12px;
+      color: rgba(43,36,28,.55);
+    }
+  </style>
 </head>
-<body style="font-family: system-ui; padding: 24px;">
-  <h2>Bạn đang offline</h2>
-  <p>Hãy bật mạng để tiếp tục.</p>
+
+<body>
+  <main class="wrap">
+    <section class="card" role="alert" aria-live="polite">
+      <div class="icons" aria-hidden="true">
+        <!-- Icon app (placeholder: 📼) -->
+        <div class="app" title="Thanh Âm Ký Ức">
+          <span>📼</span>
+        </div>
+
+        <!-- Tam giác cảnh báo vàng -->
+        <div class="warn" title="Offline">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 3.5 1.9 20.5a1.4 1.4 0 0 0 1.2 2.1h17.8a1.4 1.4 0 0 0 1.2-2.1L12 3.5Z"
+                  fill="var(--warn)" stroke="rgba(0,0,0,.18)" stroke-width="1.2"/>
+            <path d="M12 9v6" stroke="rgba(43,36,28,.9)" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="18" r="1.2" fill="rgba(43,36,28,.9)"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- 2 dòng giữ nguyên như bạn yêu cầu -->
+      <h2>Bạn đang offline</h2>
+      <p>Hãy bật mạng để tiếp tục.</p>
+
+    </section>
+  </main>
 </body>
 </html>
