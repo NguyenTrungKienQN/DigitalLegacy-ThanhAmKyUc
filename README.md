@@ -1,5 +1,5 @@
 ### Digital Legacy - Thanh âm ký ức
-Dự án Vòng thi 1 - cuộc thi FPT AI Young Guru
+Dự án Thử thách AIYOGU GYM #2 - cuộc thi FPT AI Young Guru
 
 Đội thi Therize
 
